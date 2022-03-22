@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="/index.css" type="text/css" />
+  </head>
+
+  <body>
+    <footer>
+      <H1>P O k E D E X </H1>
+      <h4>Uma Listagem de todos os POKEMONS para você!</h4>
+    </footer>
+
+    <section>
+      <div id="container">
+        <%pokedexArr.forEach(item => { %>
+
+        <a href="/detalhes/<%= item.id %> ">
+          <div id="card">
+            <div id="top-card">
+              <span> <%= item.num %> </span>
+              <span> <%= item.id %> </span>
+            </div>
+
+            <div id="main-card">
+              <img id="card" src="<%= item.img %> " alt="<%= item.name %> " />
+              <span><h2 id="nome"><%= item.name %></h2></span>
+              <span>
+                <p><b>Altura</b> <%= item.weight%></p>
+              </span>
+              <span>
+                <p><b>Peso</b> <%= item.height %></p>
+              </span>
+            </div>
+
+            <div id="footer-card">
+              <span
+                ><p><b> Tipo:</b> <%= item.type %></p>
+              </span>
+            </div>
+          </div>
+
+          <% }); %>
+        </a>
+      </div>
+    </section>
+  </body>
+</html>
